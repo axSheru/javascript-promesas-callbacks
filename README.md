@@ -1,6 +1,6 @@
-# Webpack inicial.
+# Promesas y callbacks.
 
-Este es el proyecto inicial para crear aplicaciones utilizando webpack.
+En este proyecto se realizan distintos ejemplos del uso de promesas y callbacks.
 
 ### Instrucciones:
 
