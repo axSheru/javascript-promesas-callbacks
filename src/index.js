@@ -1,5 +1,10 @@
 import './styles.css';
+import { buscarHeroe } from './js/calbacks';
 
-console.log( 'Hola mundo' );
+const heroeId = 'cap';
+
+buscarHeroe( heroeId, ( heroe ) => {
+    console.log( heroe );
+});
 
 
