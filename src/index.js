@@ -3,8 +3,13 @@ import { buscarHeroe } from './js/calbacks';
 
 const heroeId = 'cap';
 
-buscarHeroe( heroeId, ( heroe ) => {
-    console.log( heroe );
+buscarHeroe( heroeId, ( err, heroe ) => {
+
+    if ( err ) {
+        console.error( err );
+    } else {
+        console.log( heroe );
+    }
 });
 
 
