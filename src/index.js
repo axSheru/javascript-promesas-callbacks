@@ -1,10 +1,14 @@
+import { buscarHeroe as buscarHeroeCallback } from './js/calbacks';
+import { buscarHeroe } from './js/promesas';
+
 import './styles.css';
-import { buscarHeroe } from './js/calbacks';
 
 const heroeId1 = 'cap';
 const heroeId2 = 'spider';
 
-buscarHeroe( heroeId1, ( err, heroe1 ) => {
+
+// Callbacks version.
+/* buscarHeroe( heroeId1, ( err, heroe1 ) => {
 
     if ( err ) { console.error( err ); }
 
@@ -16,6 +20,17 @@ buscarHeroe( heroeId1, ( err, heroe1 ) => {
 
     });
 
+}); */
+
+
+// Promises version.
+buscarHeroe( heroeId1 ).then( heroe => {
+
+    console.log( `Enviando a ${ heroe.nombre } a la misión.` );
+
 });
+
+
+console.log( 'Fin del programa.' );
 
 
