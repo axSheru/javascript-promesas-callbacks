@@ -7,10 +7,9 @@ export const obtenerHeroesArr = async () => {
     const heroesArr = [];
 
     for( const id of heroesIds ) {
-        const heroe = await buscarHeroeAsync( id );
-        heroesArr.push( heroe );
+        heroesArr.push( buscarHeroeAsync( id ) );
     }
 
-    return heroesArr;
+    return await Promise.all( heroesArr );
 
-}
+};
