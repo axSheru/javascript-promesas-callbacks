@@ -12,6 +12,18 @@ export const buscarHeroe = ( id ) => {
 
 };
 
+export const buscarHeroeAsync = async ( id ) => {
+
+    const heroe = heroesDB[ id ];
+
+    if ( heroe ) {
+        return heroe;
+    } else {
+        throw `No existe un héroe con el id ${ id }` ;
+    }
+
+};
+
 
 const promesaLenta = new Promise( ( resolve, reject ) => {
     setTimeout(() => resolve( 'Promesa lenta.' ), 2000);
@@ -22,7 +34,7 @@ const promesaMedia = new Promise( ( resolve, reject ) => {
 });
 
 const promesaRapida = new Promise( ( resolve, reject ) => {
-    setTimeout(() => reject( 'Promesa rápida.' ), 1000);
+    setTimeout(() => resolve( 'Promesa rápida.' ), 1000);
 });
 
 export {
