@@ -1,4 +1,4 @@
-import { obtenerHeroesArr } from './js/await';
+import { obtenerHeroesArr, obtenerHeroeAwait } from './js/await';
 // import { promesaLenta, promesaMedia, promesaRapida, buscarHeroe, buscarHeroeAsync } from './js/promesas';
 
 
@@ -18,5 +18,12 @@ buscarHeroeAsync( 'spider' )
     .then( heroe => console.log( heroe ) )
     .catch( console.warn ); */
 
-obtenerHeroesArr().then( console.table );
+console.time( 'await' )
+
+obtenerHeroeAwait( 'spiderd' )
+    .then( heroe => {
+        console.log( heroe );
+        console.timeEnd( 'await' );
+    })
+    .catch( console.warn );
 
